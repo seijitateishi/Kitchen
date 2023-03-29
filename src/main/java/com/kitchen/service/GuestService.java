@@ -16,7 +16,7 @@ public class GuestService {
         return guestRepository.findAll();
     }
 
-    public Guest findById(String id) {
+    public Guest findById(Long id) {
         return guestRepository.findById(id).orElse(null);
     }
 
@@ -24,7 +24,7 @@ public class GuestService {
         return guestRepository.save(guest);
     }
 
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
         guestRepository.deleteById(id);
     }
 }

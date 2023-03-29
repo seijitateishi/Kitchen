@@ -14,13 +14,11 @@ import lombok.Setter;
 @Entity
 public class Guest implements java.io.Serializable{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column( nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    private Office office;
-    @Column
-    private String workerId;
+    private Long workerId;
 }

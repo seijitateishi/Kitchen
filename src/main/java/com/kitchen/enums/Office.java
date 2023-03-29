@@ -1,6 +1,6 @@
 package com.kitchen.enums;
 
 public enum Office{
-    GUEST,
-    WORKER
+    ROLE_WORKER,
+    ROLE_ADMIN
 }

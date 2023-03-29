@@ -10,23 +10,21 @@ import java.util.List;
 @Getter
 @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Builder
 public class Event implements java.io.Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private String id;
+    private Long id;
     private String description;
     private LocalDateTime listLimitTime;
     private LocalDateTime eventTime;
-    @OneToMany
+    @ManyToMany
     private List<Worker> workerList;
-    @OneToMany
+    @ManyToMany
     private List<Guest> guestList;
-
     @Column(nullable = false)
     private TypeOfEvent typeOfEvent;
 }

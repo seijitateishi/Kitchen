@@ -16,7 +16,7 @@ public class WorkerService {
         return workerRepository.findAll();
     }
 
-    public Worker findById(String id) {
+    public Worker findById(Long id) {
         return workerRepository.findById(id).orElse(null);
     }
 
@@ -24,7 +24,9 @@ public class WorkerService {
         return workerRepository.save(worker);
     }
 
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
         workerRepository.deleteById(id);
     }
+
+
 }

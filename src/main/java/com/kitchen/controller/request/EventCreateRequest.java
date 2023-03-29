@@ -24,6 +24,12 @@ public class EventCreateRequest {
     private TypeOfEvent type;
 
     public void save(EventService eventService) {
+        if (listLimitTime.isBefore(LocalDateTime.now())) {
+            throw new IllegalArgumentException("List limit time must be before event time");
+        }
+        if (eventTime.isBefore(listLimitTime)) {
+            throw new IllegalArgumentException("Event time must be after List limit time");
+        }
         eventService.save(Event.builder()
                 .description(description)
                 .listLimitTime(listLimitTime)
