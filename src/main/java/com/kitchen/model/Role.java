@@ -6,7 +6,6 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
-import java.util.List;
 @AllArgsConstructor
 @Builder
 @Setter
@@ -14,13 +13,16 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 public class Role implements GrantedAuthority, Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Office office;
+
     @Override
     public String getAuthority() {
         return this.office.toString();

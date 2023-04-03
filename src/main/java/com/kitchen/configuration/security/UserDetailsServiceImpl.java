@@ -1,7 +1,6 @@
 package com.kitchen.configuration.security;
 
 import com.kitchen.enums.Office;
-import com.kitchen.model.Role;
 import com.kitchen.model.Worker;
 import com.kitchen.repository.WorkerRepository;
 import com.kitchen.service.RoleService;

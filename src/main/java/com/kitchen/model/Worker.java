@@ -16,24 +16,31 @@ import java.util.List;
 @Getter
 @Entity
 public class Worker implements UserDetails,java.io.Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
+
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false,unique = true)
     private String username;
+
     @Column(nullable = false)
     private Office office;
+
     @Column(nullable = false)
     private String password;
+
     @ManyToMany
     @JoinTable(
             name = "worker_role",
             joinColumns = @JoinColumn(name = "worker_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.roles;

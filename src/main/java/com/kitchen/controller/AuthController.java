@@ -3,15 +3,10 @@ package com.kitchen.controller;
 import com.kitchen.configuration.security.UserDetailsServiceImpl;
 import com.kitchen.controller.request.UserCreateRequest;
 import com.kitchen.enums.Office;
-import com.kitchen.model.Role;
-import com.kitchen.service.WorkerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/auth")

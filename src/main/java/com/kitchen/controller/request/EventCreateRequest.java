@@ -18,8 +18,10 @@ public class EventCreateRequest {
 
     @NotNull
     private LocalDateTime listLimitTime;
+
     @NotNull
     private LocalDateTime eventTime;
+
     @NotNull
     private TypeOfEvent type;
 

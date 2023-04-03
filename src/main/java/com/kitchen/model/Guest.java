@@ -1,6 +1,5 @@
 package com.kitchen.model;
 
-import com.kitchen.enums.Office;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,12 +12,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 public class Guest implements java.io.Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column( nullable = false)
     private Long id;
+
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     private Long workerId;
 }
