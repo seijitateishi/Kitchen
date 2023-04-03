@@ -7,6 +7,7 @@ import com.kitchen.model.Role;
 import com.kitchen.service.WorkerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,7 @@ public class AuthController {
     public void login(@PathVariable String username, @PathVariable String password) {
         userDetailsService.loadUserByUsername(username);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}/{office}")
     public void update(@PathVariable Long id, @PathVariable Office office) {
         userDetailsService.update(id, office);
