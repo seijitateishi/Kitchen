@@ -1,5 +1,4 @@
 # KitchenAPI
-Backend KitchenAPI with SpringBoot,MySQL
 
 The objective of the program was to facilitate the control over, mainly, the lunch system and for other company events.
 
